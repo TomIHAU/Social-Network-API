@@ -1,4 +1,4 @@
-// **`/api/users`**
+const router = require("express").Router();
 
 // * `GET` all users
 
@@ -29,3 +29,5 @@
 // * `DELETE` to remove a friend from a user's friend list
 
 // ---
+
+module.exports = router;

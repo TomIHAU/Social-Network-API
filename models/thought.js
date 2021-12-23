@@ -11,7 +11,11 @@ const reactionSchema = new Schema({
     type: String,
     required: true,
   },
-  // createdAt: Date(),
+  createdAt: {
+    type: Date,
+    required: true,
+    default: Date(),
+  },
 });
 
 const thoughtSchema = new Schema(
@@ -22,15 +26,16 @@ const thoughtSchema = new Schema(
       minlength: 1,
       maxlength: 280,
     },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now(),
-    // },
+    createdAt: {
+      type: Date,
+      required: true,
+      default: Date(),
+    },
     username: {
       type: String,
       required: true,
     },
-    reactions: reactionSchema,
+    reactions: [reactionSchema],
   },
 
   {

@@ -1,4 +1,4 @@
-const { Thought, User } = require("../models");
+const { User } = require("../models");
 
 module.exports = {
   async createUser(req, res) {
@@ -9,6 +9,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async getUsers(req, res) {
     try {
       const allUsers = await User.find({});
@@ -17,6 +18,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async getOneUser(req, res) {
     try {
       const user = await User.find({ _id: req.params.userId });
@@ -25,6 +27,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async changeUser(req, res) {
     try {
       const updatedUser = await User.updateOne(
@@ -36,6 +39,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async removeUser(req, res) {
     try {
       let userRemoved = await User.remove({ _id: req.params.userId });
@@ -44,6 +48,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async addFriend(req, res) {
     try {
       let user = await User.findOne({ _id: req.params.userId });
@@ -56,6 +61,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
   async removeFriend(req, res) {
     try {
       let user = await User.updateOne(

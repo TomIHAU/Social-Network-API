@@ -1,4 +1,4 @@
-# week18hw
+# Social media api
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
